@@ -35,6 +35,16 @@ public class ProductController {
         List<Product> pList=service.getAllProduct();
         return new ModelAndView("productList","product",pList);
     }
+    @RequestMapping("/productList")
+	public String getProductByCategory(@RequestParam("searchCondition") String searchCondition, Model model){
+		
+		List<Product> products = service.getAllProduct();
+		model.addAttribute("products", products);
+		model.addAttribute("searchCondition", searchCondition);
+		
+		return "productList";
+	}
+
     @PostMapping("/save")
     public String addBook(@ModelAttribute Product p) {
         service.save(p);
