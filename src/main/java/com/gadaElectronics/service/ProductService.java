@@ -12,8 +12,8 @@ public class ProductService {
     @Autowired
     private ProductRepository pRepo;
 
-    public void save(Product b) {
-        pRepo.save(b);
+    public void save(Product p) {
+        pRepo.save(p);
     }
 
     public List<Product> getAllProduct() {
