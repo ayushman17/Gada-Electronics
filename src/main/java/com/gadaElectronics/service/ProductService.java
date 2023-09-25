@@ -5,6 +5,7 @@ import com.gadaElectronics.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -26,6 +27,11 @@ public class ProductService {
 
     public void deleteById(int id) {
         pRepo.deleteById(id);
+    }
+
+    @Transactional
+    public List<Product> searchProducts(String str) {
+        return pRepo.searchProducts(str);
     }
 }
 
