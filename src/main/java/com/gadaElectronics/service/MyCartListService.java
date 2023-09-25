@@ -11,8 +11,8 @@ public class MyCartListService {
     @Autowired
     private MyCartRepository mycart;
 
-    public void saveMyCart(MyCartList book) {
-        mycart.save(book);
+    public void saveMyCart(MyCartList product) {
+        mycart.save(product);
     }
 
     public List<MyCartList> getAllMyCart(){
